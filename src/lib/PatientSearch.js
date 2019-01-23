@@ -776,7 +776,8 @@ export default class PatientSearch
         }
 
         return request({
-            url: `${server.url}/Condition?${params.join("&")}`
+            //url: `${server.url}/Condition?${params.join("&")}`
+            url: `${server.url}/Observation?${params.join("&")}`
         })
         .then(handleConditionsResponse)
         .then(ids => {
@@ -803,12 +804,13 @@ export default class PatientSearch
 
         // prepare the base options for the patient ajax request
         let options = {
-            url: `${server.url}/Patient/_search`,
-            method: "POST",
+            //url: `${server.url}/Patient/_search`,
+            url: `${server.url}/Patient`,
+            method: "GET",
             processData: false,
             data,
             headers: {
-                accept: "application/json+fhir"
+                accept: "application/fhir+json"
             }
         };
 

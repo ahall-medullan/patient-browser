@@ -1,7 +1,9 @@
 {
     server: {
         type: "STU-3",
-        url: "https://r3.smarthealthit.org",
+        //url: "https://r3.smarthealthit.org",
+        url: "http://127.0.0.1:3000/3_0_1",
+        url: "https://mjapocfhir.localtunnel.me/3_0_1",
         tags: [
             {
                 key  : "pro-7-2017",

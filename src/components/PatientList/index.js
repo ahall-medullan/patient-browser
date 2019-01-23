@@ -48,6 +48,7 @@ export class PatientList extends React.Component
     }
 
     renderContents() {
+        console.log(this.props.query.error);
         if (this.props.query.error) {
             return <ErrorMessage error={this.props.query.error}/>
         }

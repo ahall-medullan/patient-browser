@@ -173,7 +173,8 @@ export class PatientDetail extends React.Component
 
         // Find $everything
         .then(state => {
-            return getAllPages({ url: `${server.url}/Patient/${state.patient.id}/$everything` })
+            //return getAllPages({ url: `${server.url}/Patient/${state.patient.id}/$everything` })
+            return getAllPages({ url: `${server.url}/Observation/?subject=${state.patient.id}` })
             .then(data => {
                 let groups = {};
                 data.forEach(entry => {
@@ -185,6 +186,7 @@ export class PatientDetail extends React.Component
                             getPath(entry, "resource.category.0.text") ||
                             getPath(entry, "resource.category.coding.0.code") ||
                             getPath(entry, "resource.category.0.coding.0.code") ||
+                            getPath(entry, "resource.code.text") ||
                             "Other"
                         ).toLowerCase();
 
